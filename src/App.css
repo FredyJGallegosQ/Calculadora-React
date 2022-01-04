@@ -1,38 +1,83 @@
-.App {
+body{
+  background: linear-gradient(to right, #38393f, #97787b, #38393f);
+}
+
+.App{
+  height: 100vh;
+  width: 100%;
+}
+
+.title{
+  color: aliceblue;
+  font-size: x large;
+  font-style: italic;
   text-align: center;
+  min-height: 1vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.Calculadora-grid{
+  display: grid; 
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
+  min-height: 50vh; /*sangría superior*/
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(80px, auto) repeat(5, 80px);
 }
 
-.App-link {
-  color: #61dafb;
+.Calculadora-grid > button{
+  border-radius: 1rem;
+  cursor: pointer; 
+  font-size: 1.5rem; 
+  font-weight: bold;
+  color: black; 
+  border: 1.5px, solid white; 
+  background-color: #f5d9d9e7;
+  margin: 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Calculadora-grid > button:hover{
+  background-color: blanchedalmond;
+}
+
+.AC{
+  grid-column: span 3;
+  font-style: oblique;
+  border-color: rgb(255, 88, 88);
+}
+
+.igual{
+  grid-column: span 2;
+  font-style: oblique;
+  border-color: rgb(255, 88, 88);
+}
+
+.output{
+  grid-column: 1 / -1;
+  margin-bottom: 6px;
+  background-color: cornsilk;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .Operando{
+  color: black;
+  font-size: 1.5rem;
+}
+
+.output .Operador{
+  color: rgb(184, 41, 41);
+  font-size: 1.5rem;
+}
+
+.Alumno{
+  color: aliceblue;
+  font-size: large;
+  font-style: italic;
+  text-align: center;
 }
